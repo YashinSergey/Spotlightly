@@ -6,7 +6,28 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE0CCF962E2E8E9400527815 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE0CCF952E2E8E9400527815 /* SnapKit */; };
+		CE0CCF9A2E2E99AD00527815 /* AsyncDisplayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0CCF992E2E99AD00527815 /* AsyncDisplayKit.xcframework */; };
+		CE0CCF9B2E2E99AD00527815 /* AsyncDisplayKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0CCF992E2E99AD00527815 /* AsyncDisplayKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE0CCF9C2E2E99AD00527815 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE0CCF9B2E2E99AD00527815 /* AsyncDisplayKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CE0CCF992E2E99AD00527815 /* AsyncDisplayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AsyncDisplayKit.xcframework; path = Carthage/Build/AsyncDisplayKit.xcframework; sourceTree = "<group>"; };
 		CE7771B82E2D4BD700189C83 /* Spotlightly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotlightly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,16 +57,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0CCF9A2E2E99AD00527815 /* AsyncDisplayKit.xcframework in Frameworks */,
+				CE0CCF962E2E8E9400527815 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE0CCF982E2E99AC00527815 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE0CCF992E2E99AD00527815 /* AsyncDisplayKit.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE7771AF2E2D4BD700189C83 = {
 			isa = PBXGroup;
 			children = (
 				CE7771BA2E2D4BD700189C83 /* Spotlightly */,
+				CE0CCF982E2E99AC00527815 /* Frameworks */,
 				CE7771B92E2D4BD700189C83 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +100,7 @@
 				CE7771B42E2D4BD700189C83 /* Sources */,
 				CE7771B52E2D4BD700189C83 /* Frameworks */,
 				CE7771B62E2D4BD700189C83 /* Resources */,
+				CE0CCF9C2E2E99AD00527815 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -78,6 +111,7 @@
 			);
 			name = Spotlightly;
 			packageProductDependencies = (
+				CE0CCF952E2E8E9400527815 /* SnapKit */,
 			);
 			productName = Spotlightly;
 			productReference = CE7771B82E2D4BD700189C83 /* Spotlightly.app */;
@@ -108,6 +142,10 @@
 			);
 			mainGroup = CE7771AF2E2D4BD700189C83;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CE0CCF942E2E8E9400527815 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CE0CCF972E2E91FC00527815 /* XCRemoteSwiftPackageReference "Texture" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE7771B92E2D4BD700189C83 /* Products */;
 			projectDirPath = "";
@@ -338,6 +376,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE0CCF942E2E8E9400527815 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		CE0CCF972E2E91FC00527815 /* XCRemoteSwiftPackageReference "Texture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TextureGroup/Texture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE0CCF952E2E8E9400527815 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE0CCF942E2E8E9400527815 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE7771B02E2D4BD700189C83 /* Project object */;
 }

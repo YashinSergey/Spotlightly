@@ -1,0 +1,25 @@
+PODS:
+  - PINOperation (1.2.3)
+  - PINRemoteImage/Core (3.0.4):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.4):
+    - PINRemoteImage/Core
+
+DEPENDENCIES:
+  - PINRemoteImage/iOS (from `../../`)
+
+SPEC REPOS:
+  trunk:
+    - PINOperation
+
+EXTERNAL SOURCES:
+  PINRemoteImage:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  PINOperation: fb563bcc9c32c26d6c78aaff967d405aa2ee74a7
+  PINRemoteImage: 6256a644f4996991f124811763c7286b2a63ff94
+
+PODFILE CHECKSUM: 92fdbb41115684253472b196b5b53ee177e9f4b9
+
+COCOAPODS: 1.15.2

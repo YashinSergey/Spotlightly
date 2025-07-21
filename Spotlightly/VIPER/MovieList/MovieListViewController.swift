@@ -5,7 +5,9 @@
 //  Created by mr.Blue on 20.07.2025.
 //
 
-import Foundation
+import UIKit
+import SnapKit
+import AsyncDisplayKit
 
 //MARK: - MovieListViewControllerProtocol
 protocol MovieListViewControllerProtocol: BaseViewControllerProtocol {
@@ -17,6 +19,14 @@ final class MovieListViewController: BaseViewController, MovieListViewController
     
     //MARK: Properties
     private let presenter: MovieListPresenterProtocol
+    
+    
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .red
+        return imageView
+    }()
     
     //MARK: Init
     init(presenter: MovieListPresenterProtocol) {
@@ -37,5 +47,11 @@ final class MovieListViewController: BaseViewController, MovieListViewController
     //MARK: Private methods
     private func initialize() {
         view.backgroundColor = AppColor.Background.primary(for: interfaceStyle)
+    
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(100)
+        }
     }
 }

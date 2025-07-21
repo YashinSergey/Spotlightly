@@ -1,0 +1,4 @@
+github "TextureGroup/Texture" "releases/p13.30"
+github "pinterest/PINCache" "3.0.4"
+github "pinterest/PINOperation" "1.2.3"
+github "pinterest/PINRemoteImage" "3.0.4"

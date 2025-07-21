@@ -1,0 +1,7 @@
+platform :macos, 11.0
+
+target 'Example-Mac' do
+  pod "PINRemoteImage/OSX", :path => "../../"
+  pod "PINRemoteImage/PINCache", :path => "../../"
+  pod "PINCache"
+end
