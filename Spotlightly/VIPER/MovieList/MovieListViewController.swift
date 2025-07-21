@@ -11,7 +11,7 @@ import AsyncDisplayKit
 
 //MARK: - MovieListViewControllerProtocol
 protocol MovieListViewControllerProtocol: BaseViewControllerProtocol {
-    
+    var tableNode: ASTableNode { get }
 }
 
 //MARK: - MovieListViewController
@@ -20,12 +20,13 @@ final class MovieListViewController: BaseViewController, MovieListViewController
     //MARK: Properties
     private let presenter: MovieListPresenterProtocol
     
-    
-    
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .red
-        return imageView
+    private(set) lazy var tableNode: ASTableNode = {
+        let tableNode = ASTableNode()
+        tableNode.view.separatorStyle = .none
+        tableNode.allowsSelection = false
+        tableNode.view.showsVerticalScrollIndicator = false
+        tableNode.view.backgroundColor = .clear
+        return tableNode
     }()
     
     //MARK: Init
@@ -42,16 +43,17 @@ final class MovieListViewController: BaseViewController, MovieListViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
+        presenter.viewDidLoad()
     }
     
     //MARK: Private methods
     private func initialize() {
         view.backgroundColor = AppColor.Background.primary(for: interfaceStyle)
     
-        view.addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.width.height.equalTo(100)
+        view.addSubview(tableNode.view)
+        tableNode.view.snp.makeConstraints { maker in
+            maker.top.leading.trailing.equalToSuperview()
+            maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
